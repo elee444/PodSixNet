@@ -36,14 +36,24 @@ class Client(ConnectionListener):
     ### Network event/message callbacks ###
     #######################################
 
+<<<<<<< HEAD
     ####Lee: Modify this for the project
+=======
+>>>>>>> ffff8e54acb53339c012c6e401b927ce8cc31b92
     def Network_players(self, data):
         print("*** players: " + ", ".join([p for p in data['players']]))
 
     def Network_message(self, data):
+<<<<<<< HEAD
         print(data['who'] + ": " + data['message'])
 
     ####Lee:
+=======
+        if (data['who']=='Master'):
+            print(data['who'] + ": " + data['message']+"---I am the master")
+        else:
+            print(data['who'] + ": " + data['message'])
+>>>>>>> ffff8e54acb53339c012c6e401b927ce8cc31b92
 
     # built in stuff
 
