@@ -17,7 +17,7 @@ class ClientChannel(Channel):
     This is the server representation of a single connected client.
     """
     def __init__(self, *args, **kwargs):
-        self.nickname = "anonymous"
+        self.nickname = "Server"
         Channel.__init__(self, *args, **kwargs)
 
     def Close(self):
@@ -42,7 +42,7 @@ import itertools
 
 class Post24Server(Server):
     num_boxes=4
-    N=[None] *num_boxes #4 numbers
+    N=['2','5','9','3']
     channelClass = ClientChannel
 
     def __init__(self, *args, **kwargs):
