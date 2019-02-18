@@ -27,13 +27,15 @@ class ClientChannel(Channel):
     ### Network specific callbacks ###
     ##################################
 
+
+    ####Lee: Modify this for the project
     def Network_message(self, data):
         self._server.SendToAll({"action": "message", "message": data['message'], "who": self.nickname})
 
     def Network_nickname(self, data):
         self.nickname = data['nickname']
         self._server.SendPlayers()
-
+    ####Lee:
 
 #server
 
@@ -47,7 +49,7 @@ class Post24Server(Server):
 
     def __init__(self, *args, **kwargs):
         Server.__init__(self, *args, **kwargs)
-        self.players = WeakKeyDictionary()
+        self.players = WeakKeyDictionary()  #This seems storing all players
         print('Server launched')
 
     def Connected(self, channel, addr):
